@@ -44,7 +44,7 @@ class Server():
         self.kicked = []
 
     async def listen(self):
-        self.redis = await aioredis.create_redis_pool("redis://localhost",
+        self.redis = await aioredis.create_redis_pool("redis://127.0.0.1",
                                                       encoding="utf-8")
         loop = asyncio.get_event_loop()
         for prefix in self.modules:
@@ -56,7 +56,7 @@ class Server():
                                                  "0.0.0.0", 8123)
         loop.create_task(self._background())
         await websockets.server.serve(self.handle_websocket,
-                                      "localhost", 8765)
+                                      "127.0.0.1", 8765)
         logging.info("Сервер готов принимать соединения")
 
     async def stop(self):

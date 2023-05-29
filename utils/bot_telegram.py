@@ -13,7 +13,7 @@ dp = Dispatcher(bot)
 
 async def on_startup(dispatcher, url=None, cert=None):
     global r
-    r = await aioredis.create_redis_pool("redis://localhost",
+    r = await aioredis.create_redis_pool("redis://127.0.0.1",
                                          encoding="utf-8")
 
 
