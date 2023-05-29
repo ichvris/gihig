@@ -68,7 +68,7 @@ async def logout(request):
     raise web.HTTPFound("/")
 
 
-@routes.get("/avaland")
+@routes.get("/register")
 async def register(request):
     if not registation:
         return web.Response(text="Регистрация отключена")
@@ -133,7 +133,7 @@ async def main():
     aiohttp_jinja2.setup(app, loader=jinja2.FileSystemLoader("templates"))
     runner = web.AppRunner(app)
     await runner.setup()
-    site = web.TCPSite(runner, "34.30.252.98", int(config["webserver"]["web_port"]))
+    site = web.TCPSite(runner, "0.0.0.0", int(config["webserver"]["web_port"]))
     await site.start()
 
 

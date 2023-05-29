@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
-
-<config>
-
-    <game id="island" zoneId="islandFarm" priority="1">
-        <icon name="IslandFarmGameIcon" title="" width="580"/>
-    </game>
-
-</config>
